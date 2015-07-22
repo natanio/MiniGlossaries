@@ -5,5 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-user = CreateAdminService.new.call
-puts 'CREATED ADMIN USER: ' << user.email
+# user = CreateAdminService.new.call
+# puts 'CREATED ADMIN USER: ' << user.email
+
+language_names = ["English", "French", "German", "Japanese", "Polish", "Spanish", "Italian", "Portuguese", "Mandarin", "Cantonese"]
+
+language_names.each do |language|
+  Language.create( name: language )
+end

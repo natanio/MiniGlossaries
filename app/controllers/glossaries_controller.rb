@@ -1,5 +1,6 @@
 class GlossariesController < ApplicationController
   before_action :set_glossary, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :destroy, :update, :edit]
 
   respond_to :html
 
@@ -21,7 +22,7 @@ class GlossariesController < ApplicationController
   end
 
   def create
-    @glossary = Glossary.new(glossary_params)
+    @glossary = current_user.glossaries.new(glossary_params)
     @glossary.save
     respond_with(@glossary)
   end
