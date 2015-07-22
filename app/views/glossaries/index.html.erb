@@ -1,7 +1,16 @@
 <h1>Listing glossaries</h1>
 
+<div class="new-glossary">
+  <h3>Add New Glossary</h3>
+  <div class="new-glossary-button">
+    <%= link_to new_glossary_path do %>
+      <%= fa_icon "plus" %>
+    <% end %>
+  </div>
+</div> <!-- end new glossary -->
 
+<%= render @glossaries %>
 
 <br>
 
-<%= link_to 'New Glossary', new_glossary_path %>
+

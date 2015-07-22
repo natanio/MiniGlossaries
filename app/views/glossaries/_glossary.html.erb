@@ -1,0 +1,13 @@
+<div class="panel panel-default text-center">
+  <div class="panel-body">
+    <h3><%= glossary.topic %></h3>
+    <p><%= pluralize(glossary.terms.count, "term") %></p>
+    <%= link_to '#' do %>
+      <p><%= fa_icon 'user' %> <%= glossary.user.name %></p>
+    <% end %>
+    <%= link_to '#' do %>
+      <p><%= fa_icon 'users' %> <%= pluralize(contributor_count(glossary), 'contributor') %></p>
+    <% end %>
+  </div>
+
+</div>
