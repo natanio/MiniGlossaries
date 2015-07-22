@@ -2,9 +2,10 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :topic %>
-    <%= f.select :language_id, Language.pluck(:name, :id) %>
-    <%= f.input :description %>
+    <%= f.input :topic, placeholder: 'A descriptive topic' %>
+    <%= f.select :language_id, Language.pluck(:name, :id), label: 'Language', class: 'form-control' %>
+    <%= f.input :description, placeholder: 'Enter a short description about what kind of terms are in this glossary.' %>
+    <%= text_field_tag :terms, params[:terms], id: 'terms', placeholder: 'Enter 3-5 terms, comma separated', class: 'form-control' %>
   </div>
 
   <div class="form-actions">

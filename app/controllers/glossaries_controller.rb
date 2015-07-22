@@ -24,6 +24,8 @@ class GlossariesController < ApplicationController
   def create
     @glossary = current_user.glossaries.new(glossary_params)
     @glossary.save
+
+    create_terms
     respond_with(@glossary)
   end
 
@@ -44,5 +46,12 @@ class GlossariesController < ApplicationController
 
     def glossary_params
       params.require(:glossary).permit(:user_id, :topic, :language_id, :description)
+    end
+
+    def create_terms
+      terms = params[:terms].split(",")
+      terms.each do |term|
+        @glossary.terms.create(content: term, language_id: @glossary.language_id)
+      end
     end
 end
