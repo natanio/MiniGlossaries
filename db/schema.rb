@@ -11,7 +11,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722222030) do
+ActiveRecord::Schema.define(version: 20150722223250) do
+
+  create_table "comments", force: true do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "translation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+
+  create_table "glossaries", force: true do |t|
+    t.integer  "user_id"
+    t.string   "topic"
+    t.integer  "language_id"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "glossaries", ["language_id"], name: "index_glossaries_on_language_id"
+
+  create_table "languages", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "terms", force: true do |t|
+    t.string   "content"
+    t.integer  "glossary_id"
+    t.integer  "language_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "translations", force: true do |t|
+    t.string   "content"
+    t.integer  "term_id"
+    t.integer  "languag_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "translations", ["term_id"], name: "index_translations_on_term_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

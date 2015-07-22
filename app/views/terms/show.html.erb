@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @term.content %>
+</p>
+
+<p>
+  <strong>Glossary:</strong>
+  <%= @term.glossary_id %>
+</p>
+
+<p>
+  <strong>Language:</strong>
+  <%= @term.language_id %>
+</p>
+
+<%= link_to 'Edit', edit_term_path(@term) %> |
+<%= link_to 'Back', terms_path %>
