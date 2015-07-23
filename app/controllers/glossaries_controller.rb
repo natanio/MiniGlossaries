@@ -1,11 +1,12 @@
 class GlossariesController < ApplicationController
   before_action :set_glossary, only: [:show, :edit, :update, :destroy]
+  before_action :all_glossaries, only: [:index, :create]
   before_action :authenticate_user!, only: [:new, :create, :destroy, :update, :edit]
 
   respond_to :html
 
   def index
-    @glossaries = Glossary.all
+    @glossary = Glossary.new
     respond_with(@glossaries)
   end
 
@@ -26,7 +27,7 @@ class GlossariesController < ApplicationController
     @glossary.save
 
     create_terms
-    respond_with(@glossary)
+    render :create
   end
 
   def update
@@ -46,6 +47,10 @@ class GlossariesController < ApplicationController
 
     def glossary_params
       params.require(:glossary).permit(:user_id, :topic, :language_id, :description)
+    end
+
+    def all_glossaries
+      @glossaries = Glossary.all
     end
 
     def create_terms

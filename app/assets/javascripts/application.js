@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require masonry/jquery.masonry
+//= require masonry/jquery.infinitescroll.min
 //= require_tree .

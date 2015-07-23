@@ -1,13 +1,18 @@
-<div class="panel panel-default text-center">
-  <div class="panel-body">
+<div class="box col3 text-center">
     <h3><%= glossary.topic %></h3>
-    <p><%= pluralize(glossary.terms.count, "term") %></p>
-    <%= link_to '#' do %>
-      <p><%= fa_icon 'user' %> <%= glossary.user.name %></p>
-    <% end %>
-    <%= link_to '#' do %>
-      <p><%= fa_icon 'users' %> <%= pluralize(contributor_count(glossary), 'contributor') %></p>
-    <% end %>
+    <p><%= pluralize(glossary.terms.count, "term") %> | <%= glossary.language.name %></p>
+    <div class="row">
+      <div class="col-sm-6">
+        <%= link_to '#' do %>
+          <p><%= fa_icon 'user' %> <%= glossary.user.name %></p>
+        <% end %>
+      </div>
+      <div class="col-sm-6">
+        <%= link_to '#' do %>
+          <p><%= fa_icon 'users' %> <%= pluralize(contributor_count(glossary), 'contributor') %></p>
+        <% end %>
+      </div>
+    </div>
     <table class="table table-condensed">
       <th>Terms</th>
       <th>Translations</th>
@@ -18,6 +23,5 @@
         </tr>
       <% end %>
     </table>
-  </div>
 
 </div>
