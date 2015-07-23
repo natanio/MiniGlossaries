@@ -8,6 +8,16 @@
     <%= link_to '#' do %>
       <p><%= fa_icon 'users' %> <%= pluralize(contributor_count(glossary), 'contributor') %></p>
     <% end %>
+    <table class="table table-condensed">
+      <th>Terms</th>
+      <th>Translations</th>
+      <% glossary.terms.each do |term| %>
+        <tr>
+          <td><%= term.content %></td>
+          <td><%= fa_icon 'globe' %> <%= pluralize(term.translations.count, 'language') %></td>
+        </tr>
+      <% end %>
+    </table>
   </div>
 
 </div>
