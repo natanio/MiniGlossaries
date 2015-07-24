@@ -1,7 +1,13 @@
-<h1>Listing glossaries</h1>
+<% if !current_user %>
+  <%= render 'welcome' %>
+<% end %>
 
-<div class="search-and-sort">
-  <%= render 'sort_language' %>
+<div class="container">
+  <h2>Browse or Create Glossaries</h2>
+
+  <div class="search-and-sort">
+    <%= render 'sort_language' %>
+  </div>
 </div>
 
 <% if @glossaries.empty? %>

@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.hero {
+  height: 400px;
+  text-align: center;
+  padding: 8em;
+  background-color: #34495e;
+  margin-top: -20px;
+  color: #ecf0f1;
+}
 
 th {
   text-align: center;
@@ -10,6 +18,8 @@ th {
 #masonry-container {
   background: transparent;
   padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 20px;
   border-radius: 5px;
   clear: both;
