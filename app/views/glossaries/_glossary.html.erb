@@ -13,18 +13,37 @@
         <% end %>
       </div>
     </div>
-    <table class="table table-condensed">
+    <table class="table table-condensed terms">
       <th>Terms</th>
       <th>Translations</th>
+
       <% glossary.terms.each do |term| %>
         <tr>
-          <td><%= term.content %></td>
+          <td id="term<%= term.id %>"><%= term.content %>
+          <div id="hidden<%= term.id %>" style="display:none;">
+            <%= link_to new_translation_path, class: 'btn btn-xs btn-success', title: 'New Translation' do %>
+              <%= fa_icon 'plus' %>
+            <% end %>
+          </td>
+          </div>
           <td><%= fa_icon 'globe' %> <%= pluralize(term.translations.count, 'language') %></td>
         </tr>
+
+        <script>
+        $(document).ready(function(){
+            $('td#term<%= term.id %>').hover(function(){
+                $('#hidden<%= term.id %>').fadeIn(500)
+            },function(){
+                $('#hidden<%= term.id %>').fadeOut(500)
+            })
+        });
+        </script>
       <% end %>
+
     </table>
   <div class="view-button">
     <%= link_to 'View', glossary_path(glossary), class: "btn btn-lg btn-primary" %>
   </div>
 
 </div>
+

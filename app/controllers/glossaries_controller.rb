@@ -8,6 +8,7 @@ class GlossariesController < ApplicationController
 
   def index
     @languages = Language.all
+    @languages = @languages.sort_by { |lang| lang.name.downcase }
     @glossary = Glossary.new
 
     if params[:sorted].present?
