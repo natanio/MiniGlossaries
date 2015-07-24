@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   resources :languages
 
-  resources :translations
-
-  resources :terms
+  resources :terms do
+    resources :translations
+  end
 
   resources :glossaries
 

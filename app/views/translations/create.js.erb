@@ -1,0 +1,2 @@
+$('#newTranslation<%= @term.id %>').modal('hide');
+$('#masonry-container').html(' <%= escape_javascript( render "glossaries/new_button" ) %><%= escape_javascript( render @glossaries ) %>');

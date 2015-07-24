@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722223250) do
+ActiveRecord::Schema.define(version: 20150724225430) do
 
   create_table "comments", force: true do |t|
     t.text     "content"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20150722223250) do
   create_table "translations", force: true do |t|
     t.string   "content"
     t.integer  "term_id"
-    t.integer  "languag_id"
+    t.integer  "language_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

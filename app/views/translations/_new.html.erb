@@ -1,0 +1,14 @@
+<!-- Modal -->
+<div class="modal fade" id="newTranslation<%= term.id %>" tabindex="-1" role="dialog" aria-labelledby="newGlossaryModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add a New Translation for: <%= term.content %></h4>
+      </div>
+      <div class="modal-body">
+        <div id="translation-form<%= term.id %>"></div>
+      </div>
+    </div>
+  </div>
+</div>

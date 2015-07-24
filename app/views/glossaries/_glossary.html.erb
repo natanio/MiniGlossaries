@@ -21,13 +21,16 @@
         <tr>
           <td id="term<%= term.id %>"><%= term.content %>
           <div id="hidden<%= term.id %>" style="display:none;">
-            <%= link_to new_translation_path, class: 'btn btn-xs btn-success', title: 'New Translation' do %>
+            <%= link_to new_term_translation_path(term), class: 'btn btn-xs btn-success', title: 'New Translation', remote: true, :data => { toggle:"modal", target: "#newTranslation#{term.id}" } do %>
               <%= fa_icon 'plus' %>
             <% end %>
+          </div>
           </td>
           </div>
-          <td><%= fa_icon 'globe' %> <%= pluralize(term.translations.count, 'language') %></td>
+          <td title="<%= get_languages(term) %>"><%= fa_icon 'globe' %> <%= pluralize(term.translations.count, 'language') %></td>
         </tr>
+
+        <%= render partial: 'translations/new', locals: { term: term } %>
 
         <script>
         $(document).ready(function(){
