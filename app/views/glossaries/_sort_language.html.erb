@@ -10,4 +10,7 @@
     <li role="separator" class="divider"></li>
     <li><%= link_to 'All', glossaries_path %></li>
   </ul>
+  <% if params[:sorted].present? %>
+    <%= link_to 'Clear', glossaries_path, class: 'btn btn-primary' %>
+  <% end %>
 </div>

@@ -1,8 +1,12 @@
 <div class="box col3 new-glossary text-center">
   <h3>Add New Glossary</h3>
     <div class="new-glossary-button">
-      <%= link_to new_glossary_path, remote: true, :data => { toggle:"modal", target: "#newGlossary" } do %>
-        <%= fa_icon "plus" %>
+      <% if current_user %>
+        <%= link_to new_glossary_path, remote: true, :data => { toggle:"modal", target: "#newGlossary" } do %>
+          <%= fa_icon "plus" %>
+        <% end %>
+      <% else %>
+        <%= link_to 'Sign in to Make Glossaries', new_user_registration_path, class: 'btn btn-default' %>
       <% end %>
    </div>
 </div> <!-- end new glossary -->
