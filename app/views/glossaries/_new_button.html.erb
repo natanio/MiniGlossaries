@@ -1,8 +1,8 @@
 <div class="box col3 new-glossary text-center">
   <h3>Add New Glossary</h3>
     <div class="new-glossary-button">
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newGlossary">
+      <%= link_to new_glossary_path, remote: true, :data => { toggle:"modal", target: "#newGlossary" } do %>
         <%= fa_icon "plus" %>
-      </button>
+      <% end %>
    </div>
 </div> <!-- end new glossary -->

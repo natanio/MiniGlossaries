@@ -5,5 +5,5 @@
 $ ->
   $('#masonry-container').imagesLoaded ->
       $('#masonry-container').masonry
-        itemSelector: '.box'
+        itemSelector: '.box',
         isFitWidth: true
