@@ -1,5 +1,15 @@
 <h1>Listing glossaries</h1>
 
+<div class="search-and-sort">
+  <%= render 'sort_language' %>
+</div>
+
+<% if @glossaries.empty? %>
+  <div class="alert alert-warning">
+    <p>Looks like there aren't any glossaries for the language you selected. <b>Why not make one with the button below?</b></p>
+  </div>
+<% end %>
+
 <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
   <%= render 'new_button' %>
   <%= render @glossaries %>

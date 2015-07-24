@@ -1,0 +1,13 @@
+<!-- Single button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Sort by language <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <% @languages.each do |lang| %>
+      <li><%= link_to lang.name, glossaries_path(:sorted => lang.name) %></li>
+    <% end %>
+    <li role="separator" class="divider"></li>
+    <li><%= link_to 'All', glossaries_path %></li>
+  </ul>
+</div>

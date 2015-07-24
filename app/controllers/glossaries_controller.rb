@@ -7,7 +7,14 @@ class GlossariesController < ApplicationController
   respond_to :html
 
   def index
+    @languages = Language.all
     @glossary = Glossary.new
+
+    if params[:sorted].present?
+      @lang = Language.find_by(name: params[:sorted])
+      @glossaries = Glossary.where(language_id: @lang.id)
+    end
+
     respond_with(@glossaries)
   end
 
