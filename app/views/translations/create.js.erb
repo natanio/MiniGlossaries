@@ -1,2 +1,3 @@
 $('#newTranslation<%= @term.id %>').modal('hide');
+$('.modal-backdrop.fade.in').css('display', 'none');
 $('#masonry-container').html(' <%= escape_javascript( render "glossaries/new_button" ) %><%= escape_javascript( render @glossaries ) %>');

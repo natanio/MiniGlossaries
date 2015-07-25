@@ -5,8 +5,10 @@ module GlossariesHelper
 
   def get_languages(term)
     @languages = []
-    term.translations.each do |translation|
-      @languages << translation.language.name
+    if term.translations.count != 0
+      term.translations.each do |translation|
+        @languages << translation.language.name
+      end
     end
     @languages.join(",")
   end

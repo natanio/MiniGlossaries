@@ -6,7 +6,9 @@
           <%= fa_icon "plus" %>
         <% end %>
       <% else %>
-        <%= link_to 'Sign in to Make Glossaries', new_user_registration_path, class: 'btn btn-default' %>
+        <%= link_to new_user_registration_path, class: 'btn btn-warning' do %>
+          <%= fa_icon "exclamation-circle" %> Sign in to Make Glossaries
+        <% end %>
       <% end %>
    </div>
 </div> <!-- end new glossary -->

@@ -27,20 +27,22 @@
           </div>
           </td>
           </div>
-          <td title="<%= get_languages(term) %>"><%= fa_icon 'globe' %> <%= pluralize(term.translations.count, 'language') %></td>
+          <td title="<%= if term.translations then get_languages(term) end %>"><%= fa_icon 'globe' %> <%= pluralize(term.translations.count, 'language') %></td>
         </tr>
 
         <%= render partial: 'translations/new', locals: { term: term } %>
 
-        <script>
-        $(document).ready(function(){
-            $('td#term<%= term.id %>').hover(function(){
-                $('#hidden<%= term.id %>').fadeIn(500)
-            },function(){
-                $('#hidden<%= term.id %>').fadeOut(500)
-            })
-        });
-        </script>
+        <% if current_user %>
+          <script>
+          $(document).ready(function(){
+              $('td#term<%= term.id %>').hover(function(){
+                  $('#hidden<%= term.id %>').fadeIn(500)
+              },function(){
+                  $('#hidden<%= term.id %>').fadeOut(500)
+              })
+          });
+          </script>
+        <% end %>
       <% end %>
 
     </table>
