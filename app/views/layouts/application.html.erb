@@ -12,9 +12,14 @@
     <header>
       <%= render 'layouts/navigation' %>
     </header>
+
+
+
     <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
+      <!-- flash_message.js.coffee expects to find a div with this -->
+      <div id="flash_hook"></div>
+      <%= render 'layouts/messages' %>
+      <%= yield %>
     </main>
   </body>
 </html>

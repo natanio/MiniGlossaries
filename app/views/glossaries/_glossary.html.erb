@@ -1,5 +1,6 @@
 <div class="box col3 text-center">
     <h3><%= glossary.topic %></h3>
+    <h3><small><%= glossary.description %></small></h3>
     <p><%= pluralize(glossary.terms.count, "term") %> | <%= glossary.language.name %></p>
     <div class="row">
       <div class="col-sm-6">

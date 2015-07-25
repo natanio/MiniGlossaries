@@ -1,19 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1>Mini Glossary</h1>
+  <div class="glossary-details">
+    <ul>
+      <li><h3><%= @glossary.topic %></h3></li>
+      <li>
+        <%= link_to '#' do %>
+          <p><%= fa_icon 'user' %> <%= @glossary.user.name %></p>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to '#' do %>
+          <p><%= fa_icon 'users' %> <%= pluralize(contributor_count(@glossary), 'contributor') %></p>
+        <% end %>
+      </li>
+    </ul>
+  </div>
 
-<p>
-  <strong>Topic:</strong>
-  <%= @glossary.topic %>
-</p>
+  <div class="masonry-container text-center">
+    <%= render @terms %>
+  </div>
 
-<p>
-  <strong>Language:</strong>
-  <%= @glossary.language_id %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @glossary.description %>
-</p>
-
-<%= link_to 'Edit', edit_glossary_path(@glossary) %> |
-<%= link_to 'Back', glossaries_path %>
+</div>

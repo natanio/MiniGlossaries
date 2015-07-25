@@ -16,10 +16,15 @@ class GlossariesController < ApplicationController
       @glossaries = Glossary.where(language_id: @lang.id).order(created_at: :desc)
     end
 
+    if params[:search]
+      @glossaries = Glossary.search(params[:search]).order("created_at DESC")
+    end
+
     respond_with(@glossaries)
   end
 
   def show
+    @terms = @glossary.terms
     respond_with(@glossary)
   end
 
@@ -36,6 +41,8 @@ class GlossariesController < ApplicationController
     @glossary.save
 
     create_terms
+
+    flash[:notice] = "Awesome! You created a glossary! Add translations or ask others to help you translate your terms"
     render :create
   end
 

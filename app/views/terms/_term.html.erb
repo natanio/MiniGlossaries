@@ -1,0 +1,49 @@
+<!-- <div class="term-container">
+
+  <div class="info">
+    <h3><%= term.content %></h3>
+    <p title="<%#= if term.translations then get_languages(term) end %>"><%#= fa_icon 'globe' %> <%#= pluralize(term.translations.count, 'language') %></p>
+  </div>
+
+  <div id="translations-button<%= term.id %>" class="view-translations">
+    View Translations
+  </div>
+
+  <div id="add-translation<%= term.id %>" class="add-translations">
+    Add Translation
+  </div>
+
+</div> -->
+
+<div class="box col3 text-center">
+    <h3><%= term.content %></h3>
+    <p title="<%= if term.translations then get_languages(term) end %>">
+      <%= fa_icon 'globe' %> <%= pluralize(term.translations.count, 'language') %>
+    </p>
+
+
+      <table class="table table-condensed terms">
+        <% if term.translations.present? %>
+          <th>Translation</th>
+          <th>Language</th>
+        <% end %>
+
+        <% term.translations.each do |tran| %>
+          <tr>
+            <td id="translation<%= tran.id %>"><%= tran.content %>
+            </td>
+            </div>
+            <td><%= tran.language.name %></td>
+          </tr>
+
+        <% end %>
+
+      </table>
+
+      <%= render partial: 'translations/new', locals: { term: term } %>
+
+    <%= link_to new_term_translation_path(term), class: 'btn btn-xs btn-success', title: 'New Translation', remote: true, :data => { toggle:"modal", target: "#newTranslation#{term.id}" } do %>
+      <%= fa_icon 'plus' %> Add Translation
+    <% end %>
+
+</div>

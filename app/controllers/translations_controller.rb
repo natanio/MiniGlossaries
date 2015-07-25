@@ -23,9 +23,11 @@ class TranslationsController < ApplicationController
   def create
     @term = Term.find(params[:term_id])
     @glossaries = Glossary.all
+    @terms = @term.glossary.terms
     @translation = @term.translations.new(translation_params)
     #@translation.update_attribute(user_id: current_user.id)
     @translation.save
+    flash[:notice] = "Thanks for adding a translation!"
     respond_with(@translation)
   end
 

@@ -39,3 +39,19 @@ th {
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
+
+.glossary-details {
+  margin: -20px 0;
+}
+
+.glossary-details ul {
+  list-style: none;
+  display: inline;
+  position: relative;
+  padding: 0;
+}
+
+.glossary-details li {
+  display: inline-block;
+  padding-right: 20px;
+}

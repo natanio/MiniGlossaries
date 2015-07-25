@@ -1,3 +1,36 @@
 // Place all the styles related to the Terms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.term-container {
+  background-color: #FDFDFD;
+  border: 1px solid #CCCCCC;
+  margin: 40px 0;
+}
+
+.info {
+  width: 70%;
+  padding: 0 2em;
+  display: inline-block;
+}
+
+.view-translations {
+  display: inline-block;
+  width: 15%;
+  background-color: black;
+  vertical-align: middle;
+  position: relative;
+  padding: 47px;
+  text-align: center;
+}
+
+.add-translations {
+  display: inline-block;
+  width: 15%;
+  background-color: red;
+  vertical-align: middle;
+  position: relative;
+  padding: 47px;
+  text-align: center;
+}
