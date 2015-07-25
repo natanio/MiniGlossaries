@@ -1,4 +1,4 @@
-<div class="box col3 text-center">
+<div class="box col3 text-center" style="background: #FAFAFA; font-size: 13px; border: 1px solid #d9d9d9;">
     <h3><%= glossary.topic %></h3>
     <h3><small><%= glossary.description %></small></h3>
     <p><%= pluralize(glossary.terms.count, "term") %> | <%= glossary.language.name %></p>
@@ -20,10 +20,10 @@
 
       <% glossary.terms.each do |term| %>
         <tr>
-          <td id="term<%= term.id %>"><%= term.content %>
+          <td id="term<%= term.id %>" class="term"><%= term.content %>
           <div id="hidden<%= term.id %>" style="display:none;">
             <%= link_to new_term_translation_path(term), class: 'btn btn-xs btn-success', title: 'New Translation', remote: true, :data => { toggle:"modal", target: "#newTranslation#{term.id}" } do %>
-              <%= fa_icon 'plus' %>
+              <%= fa_icon 'plus' %> Translate
             <% end %>
           </div>
           </td>
@@ -37,9 +37,9 @@
           <script>
           $(document).ready(function(){
               $('td#term<%= term.id %>').hover(function(){
-                  $('#hidden<%= term.id %>').fadeIn(500)
+                  $('#hidden<%= term.id %>').fadeIn(300);
               },function(){
-                  $('#hidden<%= term.id %>').fadeOut(500)
+                  $('#hidden<%= term.id %>').fadeOut(100)
               })
           });
           </script>

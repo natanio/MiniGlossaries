@@ -1,14 +1,15 @@
-<div class="box col3 new-glossary text-center">
+<div class="box col3 new-glossary text-center" style="background: white; border: 2px solid rgb(160, 235, 160);">
   <h3>Add New Glossary</h3>
     <div class="new-glossary-button">
       <% if current_user %>
-        <%= link_to new_glossary_path, remote: true, :data => { toggle:"modal", target: "#newGlossary" } do %>
+        <%= link_to new_glossary_path, remote: true, :data => { toggle:"modal", target: "#newGlossary" }, class: 'btn btn-lg btn-success', title: 'Make a Glossary' do %>
           <%= fa_icon "plus" %>
         <% end %>
       <% else %>
         <%= link_to new_user_registration_path, class: 'btn btn-warning' do %>
-          <%= fa_icon "exclamation-circle" %> Sign in to Make Glossaries
+          <%= fa_icon "exclamation-circle" %> Sign up to make glossaries
         <% end %>
+        <p><br><%= link_to "Already a member? Sign in.", new_user_session_path %></p>
       <% end %>
    </div>
 </div> <!-- end new glossary -->

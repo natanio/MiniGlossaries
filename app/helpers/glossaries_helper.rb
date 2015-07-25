@@ -1,6 +1,7 @@
 module GlossariesHelper
   def contributor_count(glossary)
-    glossary.translations.count
+    @contributors = glossary.translations.pluck(:user_id).uniq
+    @contributors.count
   end
 
   def get_languages(term)

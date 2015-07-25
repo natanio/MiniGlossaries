@@ -1,21 +1,4 @@
-<!-- <div class="term-container">
-
-  <div class="info">
-    <h3><%= term.content %></h3>
-    <p title="<%#= if term.translations then get_languages(term) end %>"><%#= fa_icon 'globe' %> <%#= pluralize(term.translations.count, 'language') %></p>
-  </div>
-
-  <div id="translations-button<%= term.id %>" class="view-translations">
-    View Translations
-  </div>
-
-  <div id="add-translation<%= term.id %>" class="add-translations">
-    Add Translation
-  </div>
-
-</div> -->
-
-<div class="box col3 text-center">
+<div class="box col3 text-center" style="background: #FAFAFA; font-size: 13px; border: 1px solid #d9d9d9;">
     <h3><%= term.content %></h3>
     <p title="<%= if term.translations then get_languages(term) end %>">
       <%= fa_icon 'globe' %> <%= pluralize(term.translations.count, 'language') %>

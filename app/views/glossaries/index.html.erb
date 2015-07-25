@@ -6,15 +6,23 @@
   <h2>Browse or Create Glossaries</h2>
 
   <div class="search-and-sort">
-    <%= render 'search' %>
-    <%= render 'sort_language' %>
+    <div class="row">
+      <div class="col-md-8">
+        <%= render 'search' %>
+      </div>
+      <div class="col-md-4">
+        <div class="pull-right"><%= render 'sort_language' %></div>
+      </div>
+    </div>
   </div>
 </div>
 
 <% if @glossaries.empty? %>
-  <div class="alert alert-warning">
+<div class="container">
+  <div class="alert alert-warning top-buffer">
     <p><%= fa_icon 'bell' %> Looks like there aren't any glossaries for the language you selected. <b>Why not make one with the button below?</b></p>
   </div>
+</div>
 <% end %>
 
 <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">

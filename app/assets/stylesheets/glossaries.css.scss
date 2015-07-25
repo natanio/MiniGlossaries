@@ -29,6 +29,7 @@ th {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
+  margin-top: 30px;
   border-radius: 5px;
   clear: both;
   -webkit-border-radius: 5px;
@@ -40,8 +41,25 @@ th {
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
 
+.box {
+  margin: 5px;
+  padding: 5px;
+  background: #FAFAFA;
+  font-size: 13px;
+  line-height: 1.4em;
+  float: left;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid rgb(217, 217, 217);
+}
+
 .glossary-details {
-  margin: -20px 0;
+  margin: -20px 0 20px 0;
+  float: left;
+  clear: right;
+  display: block;
+  width: 100%;
 }
 
 .glossary-details ul {
@@ -49,9 +67,14 @@ th {
   display: inline;
   position: relative;
   padding: 0;
+  margin-bottom: 35px;
 }
 
 .glossary-details li {
   display: inline-block;
   padding-right: 20px;
+}
+
+td.term {
+  cursor: pointer;
 }

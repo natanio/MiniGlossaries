@@ -1,5 +1,5 @@
 <%= form_tag(glossaries_path, :method => "get", class: 'form-inline', id: "search-form") do %>
-<div class="form-group">
+<div class="form-group wider">
   <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: "Search Glossaries by Topic" %>
 </div>
 <%= submit_tag "Search", class: 'btn btn-primary' %>

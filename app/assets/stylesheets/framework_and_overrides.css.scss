@@ -19,6 +19,17 @@ img {
 .alert {
   text-align: center;
 }
+.wider {
+  width: 66%;
+}
+
+input#search {
+  width: 100%;
+}
+
+.top-buffer {
+  margin-top: 28px;
+}
 
 .column {
   @extend .col-md-6;
