@@ -13,7 +13,7 @@ class GlossariesController < ApplicationController
 
     if params[:sorted].present?
       @lang = Language.find_by(name: params[:sorted])
-      @glossaries = Glossary.where(language_id: @lang.id)
+      @glossaries = Glossary.where(language_id: @lang.id).order(created_at: :desc)
     end
 
     respond_with(@glossaries)
@@ -59,7 +59,7 @@ class GlossariesController < ApplicationController
     end
 
     def all_glossaries
-      @glossaries = Glossary.all
+      @glossaries = Glossary.all.order(created_at: :desc)
     end
 
     def create_terms
