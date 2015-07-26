@@ -1,4 +1,8 @@
 <div class="container">
+  <% if !current_user %>
+    <div class="alert alert-warning top-buffer"><p><%= fa_icon 'info-circle' %> Just a heads up. You aren't <%= link_to 'signed in', new_user_session_path %>. If you don't have an account yet, go ahead and <%= link_to 'create a free account now', new_user_registration_path %>.</p>
+    </div>
+  <% end %>
 
   <h1>Mini Glossary</h1>
 
@@ -15,6 +19,18 @@
           <p><%= fa_icon 'users' %> <%= pluralize(contributor_count(@glossary), 'contributor') %></p>
         <% end %>
       </li>
+      <% if current_user && current_user.id == @glossary.user_id %>
+        <li>
+          <%= link_to edit_glossary_path(@glossary) do %>
+            <%= fa_icon 'pencil' %> Edit
+          <% end %>
+        </li>
+        <li>
+          <%= link_to glossary_path(@glossary), method: :delete do %>
+            <%= fa_icon 'trash-o' %> Delete
+          <% end %>
+        </li>
+      <% end %>
     </ul>
   </div>
 

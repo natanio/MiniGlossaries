@@ -3,7 +3,10 @@
 
   <div class="form-inputs">
     <%= f.input :content, label: 'Translation', placeholder: 'Enter a translation' %>
-    <%= f.select :language_id, Language.pluck(:name, :id), label: 'Language', class: 'form-control' %>
+    <div class="form-group">
+      <%= f.label :language_id, 'What is the language?' %>
+      <%= f.select(:language_id, Language.pluck(:name, :id), {}, { class: 'form-control' }) %>
+    </div>
   </div>
 
   <div class="form-actions">
