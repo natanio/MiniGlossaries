@@ -1,6 +1,6 @@
 <div class="container">
   <% if !current_user %>
-    <div class="alert alert-warning top-buffer"><p><%= fa_icon 'info-circle' %> Just a heads up. You aren't <%= link_to 'signed in', new_user_session_path %>. If you don't have an account yet, go ahead and <%= link_to 'create a free account now', new_user_registration_path %>.</p>
+    <div class="alert alert-warning top-buffer"><p><%= fa_icon 'info-circle' %> Just a heads up. You need to <%= link_to 'sign in', new_user_session_path %> to do things like add translations to this glossary. If you don't have an account yet, go ahead and <%= link_to 'create a free account now', new_user_registration_path %>.</p>
     </div>
   <% end %>
 
